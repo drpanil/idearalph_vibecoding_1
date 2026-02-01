@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #FEFFFE;
+    color: #2D3436;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-primary rounded-button shadow-button transition-all duration-150 hover:bg-primary-hover hover:-translate-y-0.5 active:bg-primary-active focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-primary bg-transparent border-2 border-primary rounded-button transition-all duration-150 hover:bg-primary-light active:bg-primary-light/80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-whatsapp rounded-[28px] transition-all duration-150 hover:bg-[#22c55e] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-whatsapp focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface rounded-card p-8 shadow-card transition-all duration-200 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 text-base text-text-primary bg-surface border border-border rounded-input transition-all duration-150 placeholder:text-text-secondary/60 focus:border-primary focus:ring-2 focus:ring-primary-light focus:outline-none;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-text-primary mb-2;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

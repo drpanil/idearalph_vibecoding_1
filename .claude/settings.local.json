@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__idearalph__idearalph_brainstorm",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
