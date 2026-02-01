@@ -5,7 +5,7 @@ import {
 } from '$env/static/public';
 
 // Browser-side Supabase client
-export const supabase = createBrowserClient(
-  PUBLIC_SUPABASE_URL,
-  PUBLIC_SUPABASE_ANON_KEY
-);
+// Only create client if env vars are set
+export const supabase = PUBLIC_SUPABASE_URL && PUBLIC_SUPABASE_ANON_KEY
+  ? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY)
+  : null;
